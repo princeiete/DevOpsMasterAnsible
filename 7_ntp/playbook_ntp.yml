@@ -2,6 +2,10 @@
 - hosts: all
   become: true
   tasks:
+   - name: update
+     apt:
+     notify:
+      - run update     
    - name: install ntp
      apt:
       pkg: ntp
